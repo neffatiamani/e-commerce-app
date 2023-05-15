@@ -8,8 +8,8 @@
     <div class="container">
         <form method="POST" class="form-signin" style="color:white">
             {{ form.hidden_tag() }}
-            <img class="mb-4" src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="">
-            <h1 class="h3 mb-3 font-weight-normal">
+            <img class="mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1n5sESCzCbNqk7kOXn8z0yR2xNWmXe1y2yw&usqp=CAU" alt="">
+            <h1 class="h3 mb-3 font-weight-bolder ">
                 Please Login
             </h1>
             <br>
@@ -21,15 +21,26 @@
 
             <br>
 
-
             <div class="checkbox mb-3">
                <h6>Do not have an account?</h6>
                <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
             </div>
 
-            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            {{ form.submit(class="btn btn-block btn-lg btn-primary btn-animate") }}
 
         </form>
     </div>
 </body>
 {% endblock %}
+
+<style>
+    /* Additional CSS Styles */
+    .btn-animate {
+        transition: transform 0.3s ease-in-out;
+        width: 150px;
+    }
+
+    .btn-animate:hover {
+        transform: scale(0.9);
+    }
+</style>
