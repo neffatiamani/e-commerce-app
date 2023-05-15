@@ -16,7 +16,7 @@
    <body>
     
     <nav class="navbar navbar-expand-md navbar-collapse ">
-      <a class="navbar-brand" href="#">Flask Market</a>
+      <a class="navbar-brand" style="font weight= bold" href="#">Flask Market</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -41,7 +41,7 @@
                     <a class="nav-link">Welcome, {{ current_user.username }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="{{ url_for('logout_page') }}">Logout</a>
                 </li>
             </ul>
           {% else %}
@@ -84,9 +84,11 @@
    </body>
    <style>
       body {
-          background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+          background-image: url("https://png.pngtree.com/background/20210715/original/pngtree-technological-background-concept-and-idea-for-the-internet-of-things-communication-picture-image_1254770.jpg");
           background-size: cover;
+          background-repeat: no-repeat;
           background-position: center;
+          min-height: 100vh;
       }
       .navbar {
         color: #FFF; /* White */

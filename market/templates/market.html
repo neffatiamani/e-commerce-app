@@ -1,62 +1,71 @@
 {% extends 'base.html' %}
 {% block title %}
-  Market Page
+Market Page
 {% endblock %}
-
 {% block content %}
 <head>
-    <style>
-        .table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .table th,
-        .table td {
-            padding: 8px;
-            text-align: left;
-            vertical-align: top;
-            border-top: 1px solid #ddd;
-        }
-        
-        .table th {
-            background-color: #34495e;
-            color: #fff;
-        }
-        
-        .table-dark th {
-            background-color: #34495e;
-            color: #fff;
-        }
-        
-        .table-hover tbody tr:hover {
-            background-color: #ecf0f1;
-        }
-    </style>
-    
-</head>    
-    <table class="table table-hover  table-dark  ">
-        <thead>
+   <style>
+      .table {
+      width: 100%;
+      border-collapse: collapse;
+      }
+      .table th,
+      .table td {
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+      border-top: 1px solid #ddd;
+      color: white; /* Set the text color to white */
+      font-weight: bold; /* Make the text bold */
+      }
+      .table th {
+      background-color: #34495e;
+      }
+      .table-striped th {
+      background-color: #34495e;
+      }
+      .table-hover tbody tr:hover {
+      background-color: #ecf0f1;
+      }
+      .table-hover tbody tr:hover td {
+      color: black; /* Change the text color to black on hover */
+      }
+   </style>
+</head>
+<div class="row" style="margin-top:20px; margin-left:20px; color:white">
+   <div class="col-8">
+      <h2>Available items on the Market</h2>
+      <p>Click on one of the items to start buying</p>
+      <br>
+      <table class="table table-hover table-borderless table-striped ">
+         <thead>
             <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Barcode</th>
-                <th scope="col">Price</th>
-                <th scope="col">Options</th>
+               <th scope="col">ID</th>
+               <th scope="col">Name</th>
+               <th scope="col">Barcode</th>
+               <th scope="col">Price</th>
+               <th scope="col">Options</th>
             </tr>
-        </thead>
-        <tbody>
+         </thead>
+         <tbody>
             {% for item in items%}
-                <tr>
-                    <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.barcode}}</td>
-                    <td>{{item.price}}</td>
-                    <td>
-                        <button class="btn btn-outline btn-info">More Info</button>
-                        <button class ="btn btn-outline btn-success">Purchase this Item</button>
-                </tr>
+            <tr>
+               <td>{{item.id}}</td>
+               <td>{{item.name}}</td>
+               <td>{{item.barcode}}</td>
+               <td>{{item.price}}</td>
+               <td>
+                  <button class="btn btn-outline btn-info">More Info</button>
+                  <button class ="btn btn-outline btn-success">Purchase this Item</button>
+            </tr>
             {%endfor%}
-        </tbody>
-    </table>
+         </tbody>
+      </table>
+   </div>
+   <div class="col-4">
+      <h2>Owned Items</h2>
+      <p>Click on sell item to put an item back on the Market</p>
+      <br>
+   </div>
+</div>
 {% endblock %}
